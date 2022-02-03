@@ -15,12 +15,10 @@ const port = 3000;
 const uri =
   "mongodb+srv://dbUser:dbUserPassword@cluster0.c5gbk.mongodb.net/Storage?retryWrites=true&w=majority";
 
-const arr = [];
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post("/", (req, res) => {
-  arr.push(req.body);
   res.send(req.body);
 
   mongoose
@@ -37,13 +35,6 @@ app.post("/", (req, res) => {
         .catch((err) => console.log(err));
     })
     .catch((err) => console.log(err));
-
-  console.log(req.body.mail);
-
-  console.log(req.body.feedback);
-
-  // console.log(arr);
-  console.log(arr);
 });
 
 app.get("/", (req, res) => {
@@ -55,7 +46,6 @@ app.get("/", (req, res) => {
       })
       .catch((err) => console.log(err));
   });
-  //res.send(arr);
 });
 
 app.listen(port, () => {
