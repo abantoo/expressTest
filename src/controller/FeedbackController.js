@@ -11,17 +11,19 @@ exports.postFeedback = (req, res, next) => {
     })
 
     message.save()
-        .then((res) => console.log("successfully written to db"))
-        .catch((err) => console.log(err));
+        .then((result) => console.log("successfully written to db"))
+        .catch((error) => console.log(error));
 
 }
 
 exports.getAllFeedbacks = (req, res, next) => {
     Feedback.find()
         .then(result => {
-            res.send(result)
-            console.log(result)
+            //res.send(result)
+
+            res.render("index", result)
+            console.log("Successfully fetched data from database")
         })
-        .catch(err => console.log(err))
+        .catch(error => console.log(error))
 
 }

@@ -6,16 +6,23 @@ const bodyParser = require("body-parser");
 
 const mongoose = require("mongoose");
 
-const Feedback = require("./model/FeedbackModel");
+const fs = require("fs");
 
-const feedbackRoutes = require("./routes/index");
+const Feedback = require("./src/model/FeedbackModel");
+
+const feedbackRoutes = require("./src/routes/routes");
+
+const config = require("./src/configs/appConfig.json");
 
 const app = express();
 
+app.set("view engine", "ejs");
+app.set("views", "src/views");
+
+
 const port = 3000;
 
-const uri =
-  "mongodb+srv://dbUser:dbUserPassword@cluster0.c5gbk.mongodb.net/Storage?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${config.username}:${config.password}@cluster0.c5gbk.mongodb.net/Storage?retryWrites=true&w=majority`
 
 app.use(cors());
 app.use(bodyParser.urlencoded({
@@ -25,7 +32,7 @@ app.use(bodyParser.urlencoded({
 app.use(feedbackRoutes)
 
 mongoose.connect(uri)
-  .then(res => {
+  .then(result => {
     app.listen(port, () => {
       console.log(`Example app listening at http://localhost:${port}`);
     });
