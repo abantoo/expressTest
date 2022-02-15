@@ -21,7 +21,9 @@ exports.getAllFeedbacks = (req, res, next) => {
         .then(result => {
             //res.send(result)
 
-            res.render("index", result)
+            res.render("index", {
+                result: result
+            })
             console.log("Successfully fetched data from database")
         })
         .catch(error => console.log(error))
