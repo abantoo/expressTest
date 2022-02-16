@@ -1,16 +1,13 @@
 const mongoose = require("mongoose");
 
-//const Schema = mongoose.Schema();
-
 const feedbackSchema = new mongoose.Schema({
     email: {
         type: String,
-        required: true,
+        required: true
     },
-
     feedback: {
         type: String,
-        required: true,
+        required: true
     },
 }, {
     timestamps: true

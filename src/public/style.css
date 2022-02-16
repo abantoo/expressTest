@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #ff0084;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #33001b, #ff0084);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #33001b, #ff0084);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.swiper {
+    width: 600px;
+    height: 300px;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1em;
+    margin: auto 2em;
+    justify-content: center;
+    width: 50%;
+}
+
+h3 {
+    font-size: 1em;
+    text-rendering: optimizeLegibility;
+}
+
+.main-container {
+    margin-top: 5em;
+}
+
+.card {
+    /* background-color: #ddd; */
+    background-color: #FFF5FD;
+    border: 2px solid dodgerblue;
+    border-radius: 12px;
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding-right: 1em;
+
+}
+
+.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.card p {
+    margin: 0.5em 0 1.2em 1.2em;
+    font-size: 1.2em;
+}
+
+.card img {
+    margin-left: 1em;
+
+}
+
+.card h3 {
+    margin-left: 0.5em;
+}
+
+.card-tt {
+    margin-top: 0.3em;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: start;
+}
+
+img {
+    border-radius: 50%;
+    border: thin solid #ddd;
+    padding: 5px;
+    width: 4em;
+    height: 4em;
+
+}
+
+.date-container {
+    margin-right: 1em;
+
+}
+
+.date {
+    opacity: 0.6;
+    text-align: right;
+}
